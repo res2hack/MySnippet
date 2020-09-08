@@ -1,0 +1,227 @@
+<!--
+https://janickaarthur.com/
+custom code on Head and Footer
+-->
+
+<script>
+	var jq = jQuery.noConflict();
+	jq(document).ready(function(){
+  	jq(".post-meta:first").hide();
+	jq(".blog-post-list").parent().parent().attr("class","col g-1of1");
+	});
+</script>
+
+<style>
+	.ld-quiz-actions{
+		z-index:10;
+	}
+	.my-prev-link{
+		margin-right: 50px !important;
+	background-attachment:scroll;
+background-clip:border-box;
+background-color:rgba(0, 0, 0, 0);
+background-image:linear-gradient(rgb(224, 224, 224) 0%, rgb(196, 196, 196) 100%);
+background-origin:padding-box;
+background-position-x:0%;
+background-position-y:0%;
+background-repeat-x:;
+background-repeat-y:;
+background-size:auto;
+border-bottom-color:rgb(196, 196, 196);
+border-bottom-left-radius:5px;
+border-bottom-right-radius:5px;
+border-bottom-style:solid;
+border-bottom-width:1px;
+border-image-outset:0;
+border-image-repeat:stretch;
+border-image-slice:100%;
+border-image-source:none;
+border-image-width:1;
+border-left-color:rgb(196, 196, 196);
+border-left-style:solid;
+border-left-width:1px;
+border-right-color:rgb(196, 196, 196);
+border-right-style:solid;
+border-right-width:1px;
+border-top-color:rgb(196, 196, 196);
+border-top-left-radius:5px;
+border-top-right-radius:5px;
+border-top-style:solid;
+border-top-width:1px;
+color:rgb(255, 255, 255);
+cursor:pointer;
+display:block;
+filter:none;
+float:left;
+font-family:"Open Sans", sans-serif;
+font-size:16px;
+font-weight:300;
+height:24px;
+line-height:24px;
+margin-bottom:20px;
+margin-left:0px;
+margin-right:0px;
+margin-top:0px;
+min-width:140px;
+padding-bottom:10px;
+padding-left:20px;
+padding-right:20px;
+padding-top:10px;
+text-align:center;
+text-decoration-color:rgb(255, 255, 255);
+text-decoration-line:none;
+text-decoration-style:solid;
+text-shadow:rgba(0, 0, 0, 0.2) 1px 1px 0px;
+transition-delay:0s;
+transition-duration:0.3s;
+transition-property:all;
+transition-timing-function:ease;
+	}
+	.my-next-link{
+	background-attachment:scroll;
+background-clip:border-box;
+background-color:rgba(0, 0, 0, 0);
+background-image:linear-gradient(rgb(25, 162, 232) 0%, rgb(23, 134, 228) 100%);
+background-origin:padding-box;
+background-position-x:0%;
+background-position-y:0%;
+background-repeat-x:;
+background-repeat-y:;
+background-size:auto;
+border-bottom-color:rgb(25, 162, 232);
+border-bottom-left-radius:5px;
+border-bottom-right-radius:5px;
+border-bottom-style:solid;
+border-bottom-width:1px;
+border-image-outset:0;
+border-image-repeat:stretch;
+border-image-slice:100%;
+border-image-source:none;
+border-image-width:1;
+border-left-color:rgb(25, 162, 232);
+border-left-style:solid;
+border-left-width:1px;
+border-right-color:rgb(25, 162, 232);
+border-right-style:solid;
+border-right-width:1px;
+border-top-color:rgb(25, 162, 232);
+border-top-left-radius:5px;
+border-top-right-radius:5px;
+border-top-style:solid;
+border-top-width:1px;
+color:rgb(255, 255, 255);
+cursor:pointer;
+display:block;
+filter:none;
+float:right;
+font-family:"Open Sans", sans-serif;
+font-size:16px;
+font-weight:300;
+height:24px;
+line-height:20px !important;
+margin-left:0px;
+margin-right:0px;
+margin-top:0px;
+margin-bottom:20px;
+min-width:140px;
+padding-bottom:10px;
+padding-left:20px;
+padding-right:20px;
+padding-top:10px;
+text-align:center;
+text-decoration-color:rgb(255, 255, 255);
+text-decoration-line:none;
+text-decoration-style:solid;
+text-shadow:rgba(0, 0, 0, 0.2) 1px 1px 0px;
+transition-delay:0s;
+transition-duration:0.2s;
+transition-property:all;
+transition-timing-function:ease;line-height: 50px;
+width:130px
+	}
+</style>
+
+<!--
+
+https://janickaarthur.com/
+custom code on Post
+-->
+
+
+<style>
+	.widget-container ul{
+		border-top:0px !important;
+		margin-top:0px !important;
+		margin-bottom:0px !important;
+	}
+	.widget-container li{
+		border-bottom:0px !important;
+		margin-top:0px !important;
+		margin-bottom:0px !important;
+	}
+	.section-cta .form-button, .section-ctablock-button, a.content-button, a.button, .gform_button {
+	background-color:#000000 !important;
+		line-height:10px !important;
+	}
+	#custom2{
+	min-height: 230px !important;
+	}
+	#related-posts-by-taxonomy-2 .widget-title{
+	    text-align: center;
+	}
+</style>
+<script>
+	var jq = jQuery.noConflict();
+	jq(document).ready(function(){
+  	jq("#contentWrap>.grid-wrap>.row>.col").attr("class","col g-1of1");
+	jq('.body-sidebar').appendTo('#contentWrap');
+	jq('#related-posts-by-taxonomy-2').wrap('<div class="grid-wrap"></div>');
+		
+	jq("#custom1").show();
+	jq("#custom2").show();	
+	});
+</script>
+
+<!--
+
+Widget 1
+-->
+
+<div id="custom1" style="display:none;background-color: #951019;margin-left: -20px;
+    margin-right: -20px;">
+
+  <div  class="grid-wrap">
+    <div class="row" style="overflow: auto; padding:50px 25px; ">
+    <div class="col g-1of1 g2-2of3">
+  <h1><span style="color: #ffffff;">I am</span>
+  <span style="color: #fff;"><strong><span style="color: #ffffff;">Janicka </span><span style="color: #fff;">A. Arthur</span><span style="color: #ffffff;">,</span></strong></span></h1>
+  <h3 data-identifyelement="412"><span style="color: #ffffff;">An entrepreneur, choreographer, movement strategist, public speaker and <a style="color: #ffffff;" href="https://arthurcreativeconsulting.com/" target="_blank" rel="noopener noreferrer" data-identifyelement="414">creative business consultant</a> located in the Dallas-Fort Worth area.</span></h3>
+  <h3 data-identifyelement="412"><span style="color: #ffffff;">I work directly with mature aspiring dancers  (just like you) to guide them through physical MOVEment as they develop a mindset of strength and a soul full of passion where their physical victories truly reflect an inner transformation.</span></h3>
+    </div>
+    <div class="col g-1of1 g2-1of3">
+      <img class=" wp-image-5707 aligncenter" src="https://janickaarthur.com/wp-content/uploads/2019/09/About-Authur.png" alt="" width="401" height="533" />
+    </div>
+  </div>
+  </div>
+</div>
+
+<!--
+
+Widget 2
+-->
+
+<div id="custom2" style="display:none;overflow: auto; background-color: #91160e;background: #91160e url('https://janickaarthur.com/wp-content/uploads/2020/02/ja-b-30-2-e1580900998406.png') center center no-repeat; -webkit-background-size: cover; -moz-background-size: cover; -o-background-size: cover; background-size: cover; margin-left: -20px;
+    margin-right: -20px;">
+<div class="grid-wrap" style="min-height:0px">
+	<div class="row" style="">
+	<div class="col g-1of1 g2-2of3">
+&nbsp;
+<h1><span style="color: #ffffff;">Join The Movement</span></h1>
+<h3><span style="color: #ffffff;">Sign up to get the latest news, dance tips, and motivations right in your inbox.</span></h3>
+	</div>
+	<div class="col g-1of1 g2-1of3">
+		[gravityform id="9" title="false" description="false" ajax="true"]
+	</div>
+</div>
+	</div>
+	</div>
