@@ -1,0 +1,136 @@
+https://attractionmarketingproject.freshdesk.com/a/tickets/8325
+btn js_submit_form kartra_checkout_btn js_theme_background
+
+sessionStorage.setItem("product1", "Phisycal Book : The Fragrant Points on Your Feet");
+	link https://oils.livefragrantly.com/mini-courseold 
+
+sessionStorage.setItem("product2", "28 Day Challenge : The Fragrant Points On Your Feet");
+	Link https://oils.livefragrantly.com/28-day-challenge
+	thanks page francisherdes.kartra.com/page/w5Z127
+	new tanks page https://oils.livefragrantly.com/mini-courseold 
+
+sessionStorage.setItem("product3", "7 Simple Ways to Increase Your Wellness & Energy!"); 
+	link https://oils.livefragrantly.com/mini-course
+	thanks page francisherdes.kartra.com/page/qSS129
+	new tanks page https://oils.livefragrantly.com/thank-you-full-diy-course
+
+sessionStorage.setItem("product4", "Harmonize Your Emotions with Essential Oils");
+	link https://https://oils.livefragrantly.com/full-course-upsell
+	thanks page francisherdes.kartra.com/page/1L3131
+	new tanks page oils.livefragrantly.com/full-course-downsell
+
+sessionStorage.setItem("product5", "Deep Dive and Demonstrations into each of the 9 techniques!
+	link https://oils.livefragrantly.com/full-course-downsell
+	thanks page francisherdes.kartra.com/page/qSS129
+	new tanks page https://oils.livefragrantly.com/thank-you-full-diy-course
+
+0px 3px 5px rgba(0,0,0,.2)
+<div data-embed="true">
+<script type="text/javascript">
+console.log("tes");
+$(".js_kartra_component_holder").click(function(){
+   $(this).hide(); 
+});
+$( "body" ).on( "click", ".kartra_checkout_btn", function() {
+  console.log("tes pay");
+  return false;
+});
+$( "body" ).on( "mouseenter", ".kartra_checkout_btn", function() {
+  console.log("tes pay enter");
+  return false;
+});
+sessionStorage.setItem("lastname", "Smith");
+console.log(sessionStorage.getItem("lastname"));
+</script> 
+class="kartra_button11 kartra_button11--lsp-1-two-line-btn kartra_button11--default kartra_button11--gradient kartra_button11--solid kartra_button11--full-width kartra_button11--squared kartra_button11--shadow-small pull-center toggle_page"
+
+https://app.kartra.com/pages/sites/122
+28 Day Challenge Upsell
+<div data-embed="true">
+<script type="text/javascript">
+sessionStorage.setItem("product1", "Phisycal Book : The Fragrant Points on Your Feet");
+$( "body" ).on( "click", ".kartra_button11", function() {
+	sessionStorage.setItem("product2", "28 Day Challenge : The Fragrant Points On Your Feet");
+});
+</script> 
+</div>
+
+https://app.kartra.com/pages/sites/128
+Full Course Upsell
+<div data-embed="true">
+<script type="text/javascript">
+$( "body" ).on( "click", ".kartra_button11", function() {
+	sessionStorage.setItem("product4", "Harmonize Your Emotions with Essential Oils");
+});
+</script> 
+</div>
+
+https://app.kartra.com/pages/sites/131
+Full Course In Payments Downsell
+<div data-embed="true">
+<script type="text/javascript">
+$( "body" ).on( "click", ".kartra_button11", function() {
+	sessionStorage.setItem("product5", "Deep Dive and Demonstrations into each of the 9 techniques!");
+});
+</script> 
+</div>
+
+
+
+
+<div data-embed="true">
+<script type="text/javascript">
+$( "body" ).on( "click", ".kartra_button11", function() {
+  sessionStorage.setItem("product3", "7 Simple Ways to Increase Your Wellness & Energy!");
+});
+
+console.log(sessionStorage.getItem("product1"));
+console.log(sessionStorage.getItem("product2"));
+console.log(sessionStorage.getItem("product3"));
+console.log(sessionStorage.getItem("product4"));
+console.log(sessionStorage.getItem("product5"));
+
+</script> 
+</div><div data-embed="true">
+
+https://oils.livefragrantly.com/thank-you-full-diy-course
+
+ <div data-embed="true">
+<script type="text/javascript">
+$(document).ready(function(){
+    var items = "<ol>";
+    if(sessionStorage.getItem("product1")!=null){items += "<li>"+ sessionStorage.getItem("product1") +"</li>";}
+    if(sessionStorage.getItem("product2")!=null){items += "<li>"+ sessionStorage.getItem("product2") +"</li>";}
+    if(sessionStorage.getItem("product3")!=null){items += "<li>"+ sessionStorage.getItem("product3") +"</li>";}
+    if(sessionStorage.getItem("product4")!=null){items += "<li>"+ sessionStorage.getItem("product4") +"</li>";}
+    if(sessionStorage.getItem("product5")!=null){items += "<li>"+ sessionStorage.getItem("product5") +"</li>";}
+    items += "<ol>"
+    $("#product_list").text(sessionStorage.getItem("product1"));
+});
+
+console.log(sessionStorage.getItem("product1"));
+console.log(sessionStorage.getItem("product2"));
+console.log(sessionStorage.getItem("product3"));
+console.log(sessionStorage.getItem("product4"));
+console.log(sessionStorage.getItem("product5"));
+
+
+</script> 
+</div>
+
+
+ <div data-embed="true">
+<script type="text/javascript">
+$(document).ready(function(){
+    var items = "<ol>";
+    if(sessionStorage.getItem("product1")!=null){items += "<li>"+ sessionStorage.getItem("product1") +"</li>";}
+    if(sessionStorage.getItem("product2")!=null){items += "<li>"+ sessionStorage.getItem("product2") +"</li>";}
+    if(sessionStorage.getItem("product3")!=null){items += "<li>"+ sessionStorage.getItem("product3") +"</li>";}
+    if(sessionStorage.getItem("product4")!=null){items += "<li>"+ sessionStorage.getItem("product4") +"</li>";}
+    if(sessionStorage.getItem("product5")!=null){items += "<li>"+ sessionStorage.getItem("product5") +"</li>";}
+    items += "</ol>"
+    $("#product_list").html(items);
+});
+</script> 
+</div>
+
