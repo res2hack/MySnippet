@@ -1,6 +1,5 @@
 <?php
 //file location : essential-addons-for-elementor-lite/includes/Template/Eicon-Woocommerce/default.php
-<?php
 
 use \Essential_Addons_Elementor\Classes\Helper;
 
