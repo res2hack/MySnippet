@@ -36,21 +36,40 @@ if ( $grid_style_preset == 'eael-product-simple' || $grid_style_preset == 'eael-
 <?php
     // Start Edited by DeskTeam360
     // function : add brand to product
+    $member_status = wc_memberships_is_user_active_member( get_current_user_id(), 'only-for-member' );
     $product_category = $product->get_categories();
     $arr_product_category = explode(",",$product_category);
     foreach($arr_product_category as $key => $one) {
-    if(strpos($one, 'browse-by-brand') == false)
-        unset($arr_product_category[$key]);
+        if(strpos($one, 'browse-by-brand') == false)
+            unset($arr_product_category[$key]);
     }
-    $product_brand = implode(" ",$arr_product_category);	
-		$product_price = $product->get_price_html();
-    if (!is_user_logged_in()&&preg_match('/biologique-recherche|environ/i', $product_brand)){
-      $product_price =" ";
-    }		
+    $product_brand = implode(" ",$arr_product_category);
+    $product_brand = !empty($product_brand) ? $product_brand : "&nbsp;";	
+	$product_price = $product->get_price_html();
+    // if (!is_user_logged_in()&&preg_match('/biologique-recherche|environ/i', $product_brand)){
+    //   $product_price =" ";
+    // }		
+    if ( preg_match('/biologique-recherche/i', $product_brand) ) {
+      if ( is_user_logged_in() ) {
+          if ( !$member_status ) {
+              $product_price ="&nbsp;";
+          }
+      }
+      else {
+          $product_price ="&nbsp;";
+      }
+    } 
+    elseif ( preg_match('/environ/i', $product_brand) && !is_user_logged_in() ) {
+           $product_price ="&nbsp;";
+    }
+    else {
+        $product_price = $product_price;
+    }   
+
 ?>
     <li class="product" style="transition: unset;"><!-- Deskteam360 -->
         <a href="<?php echo esc_url( $product->get_permalink() ); ?>" class="woocommerce-LoopProduct-link woocommerce-loop-product__link">
-            <?php echo wp_kses_post( $product->get_image( 'woocommerce_thumbnail', ['loading' => 'eager','style'=>"width: 100% !important;"] ) ); ?>
+            <?php echo wp_kses_post( $product->get_image( 'woocommerce_thumbnail', ['loading' => 'eager','style'=>"width: 100% !important;"] ) ); //Deskteam360 ?>
 						<h2 class="product-brand-shop"><?php echo $product_brand; //Deskteam360 ?></h2>
             <h2 class="woocommerce-loop-product__title"> <?php echo esc_html( $product->get_title() ); ?> </h2>
             <?php
@@ -67,11 +86,33 @@ if ( $grid_style_preset == 'eael-product-simple' || $grid_style_preset == 'eael-
         </a>
         <?php
 				//begin DeskTeam360
-				if (!is_user_logged_in()&&preg_match('/biologique-recherche|environ/i', $product_brand)){
-						echo '<a href="/my-account" class="button product_type_simple" data-product_id="15225" data-product_sku="" aria-label="Add “Serious Glypeel” to your cart" rel="nofollow">Login to see prices</a>';
-				}else{
-						woocommerce_template_loop_add_to_cart();      
-				}				
+
+				// if (!is_user_logged_in()&&preg_match('/biologique-recherche|environ/i', $product_brand)){
+				// 		echo '<a href="/my-account" class="button product_type_simple" data-product_id="15225" data-product_sku="" aria-label="Add “Serious Glypeel” to your cart" rel="nofollow">Login to see prices</a>';
+				// }else{
+				// 		woocommerce_template_loop_add_to_cart();      
+				// }				
+
+                if ( preg_match('/biologique-recherche/i', $product_brand) ) {
+                  if ( is_user_logged_in() ) {
+                      if ( !$member_status ) {
+                         echo '<a href="/biologique-recherche-contact-page" class="button product_type_simple" style="font-size: smaller;width: 100%;">Request Customized Regimine</a>';
+                      }
+                      else {
+                            woocommerce_template_loop_add_to_cart();
+                      }
+                  }
+                  else {
+                      echo '<a href="/my-account" class="button product_type_simple">Login to See Prices</a>';
+                  }
+                } 
+                elseif ( preg_match('/environ/i', $product_brand) && !is_user_logged_in() ) {
+                      echo '<a href="/my-account" class="button product_type_simple">Login to See Prices</a>';
+                }
+                else {
+                    woocommerce_template_loop_add_to_cart(); 
+                }   
+
 				//end DeskTeam360
         if ( $should_print_compare_btn ) {
             Product_Grid::print_compare_button( $product->get_id() );
