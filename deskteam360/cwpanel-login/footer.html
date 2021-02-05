@@ -1,0 +1,9 @@
+<div class="footer">
+    <div id="footer_content">
+      {% if mod.custom_footer != '' %}
+        {{mod.custom_footer|raw}}
+      {% else %}
+        <strong>Copyright</strong> <a href="https://deskteam360.com" target="_blank">DeskTeam360</a>  &copy; {{mod.ano}}
+      {% endif%}
+    </div>
+</div>
