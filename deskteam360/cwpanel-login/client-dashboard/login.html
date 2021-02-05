@@ -1,0 +1,732 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>DeskTeam360 Hosting - Login</title>
+
+    <link href="{{url}}/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{url}}/font-awesome/css/fontawesome-all.css">
+    <link href="{{url}}/css/plugins/iCheck/custom.css" rel="stylesheet">
+    <!-- Toastr style -->
+    <link href="{{url}}/css/plugins/toastr/toastr.min.css" rel="stylesheet">
+    <!-- Gritter -->
+    <link href="{{url}}/js/plugins/gritter/jquery.gritter.css" rel="stylesheet">
+		
+    <!-- <link href="{{url}}/css/animate.css" rel="stylesheet"> -->
+    {% if conten.STYLE =='dark'%}
+    <link href="{{url}}/css/style_dark.css" rel="stylesheet">
+    {% else %}
+    <link href="{{url}}/css/style.css" rel="stylesheet">
+    {% endif %}
+    <!-- favicon -->
+    <link rel="shortcut icon" href="https://cdn.statically.io/gh/res2hack/MySnippet/a5a86cdf/deskteam360/cwpanel-login/img/ico/deskteam360.png" />
+
+    <link href="https://cdn.statically.io/gh/res2hack/MySnippet/a5a86cdf/deskteam360/cwpanel-login/css/animate.min.css" rel="stylesheet" type="text/css" />
+
+    <!-- css -->
+    <link href="https://cdn.statically.io/gh/res2hack/MySnippet/a5a86cdf/deskteam360/cwpanel-login/css/bootstrap-login.min.css" rel="stylesheet" type="text/css" />
+    <link href="https://cdn.statically.io/gh/res2hack/MySnippet/a5a86cdf/deskteam360/cwpanel-login/css/materialdesignicons.min.css" rel="stylesheet" type="text/css" />
+
+    <link href="https://cdn.statically.io/gh/res2hack/MySnippet/a5a86cdf/deskteam360/cwpanel-login/css/style-login.css" rel="stylesheet" type="text/css" />
+
+
+    <link rel="shortcut icon" href="https://cdn.statically.io/gh/res2hack/MySnippet/a5a86cdf/deskteam360/cwpanel-login/img/ico/deskteam360.png" />
+    <style media="screen">
+      #btn_icon{
+        display: none;
+      }
+      body, html{
+        margin: 0px;
+        padding: 0px;
+      }
+      .logged-message{
+        /* display: flex;
+        height: 100vh;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column; */
+        display: flex;
+        align-items: center;
+      }
+      .logged-message a{
+        margin-bottom: 2rem;
+      }
+      .logged-message img{
+        width: 35rem;
+      }
+      .logged-message-alert{
+        border-radius: 5px;
+        color: #676a6c;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+      }
+      .logged-message-alert .fa{
+        font-size: 6rem;
+      }
+      .logged-message-alert h5{
+        font-size: 2rem;
+      }
+      .logged-message-alert h2{
+        font-size: 2.5rem;
+        font-weight: bold;
+      }
+      .logged-message-wrapper{
+        display: none;
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 100px 20px 20px 20px;
+      }
+    </style>
+		<style>
+		.sliding-middle-out {
+				display: inline-block;
+				position: relative;
+				padding-bottom: 1px;
+				color:#fb7419;
+		}
+		.sliding-middle-out:after {
+				content: '';
+				display: block;
+				margin: auto;
+				height: 1px;
+				width: 0px;
+				background: transparent;
+				transition: width .5s ease, background-color .5s ease;
+		}
+		.sliding-middle-out:hover:after {
+				width: 100%;
+				background: #fb7419;
+		}
+		.sliding-middle-out:hover {
+			color:#fb7419;
+		}
+		.sliding-middle-out{
+			padding-bottom: 15px;
+			padding-left: 5px;
+			font-size: 15px;
+		}
+		.btn-login{
+			background-color:#fb7419;
+			color:white;
+			border:1px solid #fb7419;
+		}
+		.btn-login:hover{
+			background-color:#f81366;
+			color:white;
+			border:1px solid #f81366;
+		}
+		.text-dark:hover{
+			font-weight:bold;
+		}
+		h2{
+			color:#fb7419;
+		}
+		h4{
+			color:#fb7419;
+		}
+		.fa{
+			color:#fb7419;
+		}
+		a{
+			color:#fb7419;
+		}
+		a:hover{
+			color:#f81366;
+		}
+		*:focus{
+			border-color:#fb7419 !important;
+		}
+		#sessioning:hover{
+			filter: hue-rotate(180deg);
+		}
+		option:hover{
+      background-color: #fb7419 !important;
+    }
+		select option:hover {
+				box-shadow: 0 0 10px 100px #1882A8 inset;
+		}
+		.ibox-content{
+			border-top-width:0px;
+		}
+		</style>
+</head>
+
+<body class="vh-100 bg-light overflow-hidden" style="background: url(https://cdn.statically.io/gh/res2hack/MySnippet/e5652a60/deskteam360/cwpanel-login/img/bg-login.jpg) center; background-repeat: no-repeat; background-size: cover;">
+    <div class="preloader">
+			<div class="status">
+				<div class="shape shape-1"></div>
+				<div class="shape shape-2"></div>
+				<div class="shape shape-3"></div>
+				<div class="shape shape-4"></div>
+			</div>
+    </div>
+    <div class="contain-box">
+        <!-- <div class="home-btn"> -->
+            <!-- <a href="" class="back-button text-primary h5"><i class="mdi mdi-arrow-left mr-1"></i> Back</a> -->
+        <!-- </div> -->
+        <div class="home-center">
+            <div class="home-desc-center">
+                <div class="container">
+                    <div class="row justify-content-end align-items center">
+                        <div class="col-lg-6">		
+													<div class="loginColumns contact-info p-5 mt-5 px-3 rounded bg-white animate__animated animate__fadeInRight" id="login">
+														<div class="row">
+																<div class="col-md-12">
+																	<div class="text-center mb-4">
+																		<a href="https://deskteam360.com"><img src="https://cdn.statically.io/gh/res2hack/MySnippet/e5652a60/deskteam360/cwpanel-login/img/deskteam360-logo-black.png" alt="" height="30" /></a>
+																	</div>
+																	<div class="text-center">
+																		<h4 >Sign in to Web Hosting</h4>
+
+																		<p class="text-muted f-18">New to DeskTeam360? <a href="https://deskteam360.com" class="btn sliding-middle-out"> Explore Us</a></p>
+																						
+																	</div>
+
+																</div>
+																<div class="col-md-12">
+																		<div class="ibox-content custom-form" id="formlogin">
+																			<form class="m-t" role="form" action="#" id="formloginon" method="post">
+																				<div class="form-group">
+																						<label for="username">Username</label>
+																						<input type="text" name="username" max="16" id="username" class="form-control" placeholder="{{langmod.LGLLABEL4}}" required="" maxlength="16" autofocus>
+																				</div>
+
+																				<div class="form-group">
+																						<label for="userpassword">Password</label>
+																						<input type="password" name="password" id="password" class="form-control" placeholder="{{langmod.LGLLABEL5}}" required="">
+																				</div>
+																				<div class="form-group">
+																						<div class="row">																								
+																							<div class="col-lg-4" style="padding-top: 5px"><label>{{langmod.LGLANG0}}</label></div>
+																							<div class="col-lg-8">
+																								<select class="form-control" id="userLang">
+																									<option value="">{{langmod.LGLANGD}}</option>
+																									<option value="ar">{{langmod.LGLANGAR}}</option>
+																									<option value="bg">{{langmod.LGLANGBG}}</option>
+																									<option value="cs">{{langmod.LGLANGCS}}</option>
+																									<option value="da">{{langmod.LGLANGDA}}</option>
+																									<option value="de">{{langmod.LGLANGDE}}</option>
+																									<option value="el">{{langmod.LGLANGEL}}</option>
+																									<option value="en">{{langmod.LGLANGEN}}</option>
+																									<option value="es">{{langmod.LGLANGES}}</option>
+																									<option value="fa">{{langmod.LGLANGFA}}</option>
+																									<option value="fi">{{langmod.LGLANGFI}}</option>
+																									<option value="fr">{{langmod.LGLANGFR}}</option>
+																									<option value="ga">{{langmod.LGLANGGA}}</option>
+																									<option value="he">{{langmod.LGLANGHE}}</option>
+																									<option value="hr">{{langmod.LGLANGHR}}</option>
+																									<option value="hu">{{langmod.LGLANGHU}}</option>
+																									<option value="id">{{langmod.LGLANGID}}</option>
+																									<option value="it">{{langmod.LGLANGIT}}</option>
+																									<option value="ja">{{langmod.LGLANGJA}}</option>
+																									<option value="ms">{{langmod.LGLANGMS}}</option>
+																									<option value="nb">{{langmod.LGLANGNB}}</option>
+																									<option value="nl">{{langmod.LGLANGNL}}</option>
+																									<option value="no">{{langmod.LGLANGNO}}</option>
+																									<option value="pl">{{langmod.LGLANGPL}}</option>
+																									<option value="pt">{{langmod.LGLANGPT}}</option>
+																									<option value="ro">{{langmod.LGLANGRO}}</option>
+																									<option value="ru">{{langmod.LGLANGRU}}</option>
+																									<option value="sl">{{langmod.LGLANGSL}}</option>
+																									<option value="sv">{{langmod.LGLANGSV}}</option>
+																									<option value="th">{{langmod.LGLANGTH}}</option>
+																									<option value="tr">{{langmod.LGLANGTR}}</option>
+																									<option value="uk">{{langmod.LGLANGUK}}</option>
+																									<option value="ur">{{langmod.LGLANGUR}}</option>
+																									<option value="zh">{{langmod.LGLANGZH}}</option>
+																								</select>
+																							</div>
+																						</div>
+																				</div>
+
+																				<div class="custom-control custom-checkbox">
+																						<input type="checkbox" name="sessioning" id="sessioning" class="form-control1" />
+																						<label class="" for="sessioning">{{langmod.LGLLABEL38}}</label> 
+																				</div>
+																				<div class="mt-3">
+																						<button type="submit"  id="btnsubmit"  class="btn btn-login btn-block text-uppercase" onclick="return valite()">
+																							<i id="btn_icon" class="fa fa-spinner fa-spin"></i>
+																							<span id="btn_title">{{langmod.LGLLABEL6}}</span>
+																						</button>
+																				</div>
+																				<p class="text-muted text-center" style="display: {{cont.SSL}}">
+																						<i class="fa fa-lock"></i>  <small>{{langmod.LGLLABEL7}} <a href="{{cont.URLREDIRECT}}">{{langmod.LGLLABEL8}}</a></small>
+																				</p>
+																				<input type="hidden" id="token" name="token" value="">
+																				<input type="hidden" id="intended" name="intended" value="{{intended}}">
+
+																				<div class="mt-4 pt-1 mb-0 text-center">
+																						<a class="btn btn-sm btn-white btn-block" href="#" onclick="return forgout(0)"><i
+																										class="mdi mdi-lock"></i> {{langmod.LGLLABEL9}}</a>
+																				</div>
+																				<div class="mt-4 pt-0 mb-0 text-end">
+																						&copy; <script>document.write(new Date().getFullYear())</script> DeskTeam360. All Rights Reserved. <a href="https://deskteam360.com" class=""> Privacy Policy</a>
+																				</div>
+																			</form>
+
+																		</div>
+																		<div class="ibox-content m-t" id="twofa" style="display: none">
+																				<div class="row">
+																						<div class="col-lg-12">
+																								<h2 align="center">{{langmod.LGLABEl53}}</h2>
+																						</div>
+																				</div>
+																				<div class="row">
+																						<div class="col-lg-12">
+																								<h6><p align="center">{{langmod.LGLABEl54}}</p></h6>
+																						</div>
+																				</div>
+																				<div class="row">
+																						<div class="col-lg-12">
+																								<h6><p class="form-text m-b-none"><b>{{langmod.LGLABEl55}}</b></p></h6>
+																								<input type="text" class="form-control center text-center" maxlength="6" id="f2acode" name="f2acode" placeholder="******" required=""  style="text-align: center;font-size:25px">
+																								<h6><p class="form-text m-b-none">{{langmod.LGLABEl56}}</p></h6>
+																						</div>
+																				</div>
+																				<div class="row" style="margin-top: 30px">
+																						<button type="button" id="btn-f2acode"  class="btn btn-primary block full-width m-b">
+																								<i id="btn_icon" class="fa fa-spinner fa-spin"></i>
+																								<span id="btn_title">{{langmod.LGLABEl57}}</span>
+																						</button>
+																						<p class="text-muted text-center"><small><a href="https://docs.control-webpanel.com/docs/user-guide/login/two-factor-authentication" target="_blank">{{langmod.LGLABEl58}}</a></small></p>
+																				</div>
+																		</div>
+
+																</div>
+														</div>
+													</div>
+
+													<div class="logged-message-wrapper contact-info p-5 mt-5 px-3 rounded bg-white animate__animated animate__fadeInRight" id="logged_message">
+														<div class="logged-message row">
+															<div class="col-md-12" style="text-align: center;">
+																	{% if mod.stimg==1 %}
+																			<img width="330px" src="https://cdn.statically.io/gh/res2hack/MySnippet/e5652a60/deskteam360/cwpanel-login/img/deskteam360-logo-black.png">
+																	{% else %}
+																			<a href="https://deskteam360.com" target="_blank"><img width="330px" src="https://cdn.statically.io/gh/res2hack/MySnippet/e5652a60/deskteam360/cwpanel-login/img/deskteam360-logo-black.png"></a>
+																	{% endif %}
+																<!--<a href="https://www.control-webpanel.com" target="_blank"><img src="/login/cwp_theme/original/img/new_logo_small.png"></a>-->
+															</div>
+															<div class="col-md-12">
+																<div class="logged-message-alert">
+																	<i class="fa fa-spinner fa-spin"></i>
+																		<h2 class="">
+																				{{langmod.LGLLABEL35}}
+																		</h2>
+																		<h5>{{langmod.LGLLABEL36}}</h5>
+																		<h5>{{langmod.LGLLABEL37}}</h5>
+																</div>
+															</div>
+														</div>
+													</div>
+													<div class="logged-message-wrapper contact-info p-5 mt-5 px-3 rounded bg-white animate__animated animate__fadeInRight" id="recover_pass">
+														<div class="logged-message row">
+															<div class="col-md-12" style="text-align: center;">
+
+																		{% if mod.stimg==1 %}
+																			<img width="330px" src="https://cdn.statically.io/gh/res2hack/MySnippet/e5652a60/deskteam360/cwpanel-login/img/deskteam360-logo-black.png">
+																		{% else %}
+																			<a href="https://deskteam360.com" target="_blank"><img width="330px" src="https://cdn.statically.io/gh/res2hack/MySnippet/e5652a60/deskteam360/cwpanel-login/img/deskteam360-logo-black.png"></a>
+																		{% endif %}
+
+																		<!--<img src="/login/cwp_theme/original/img/new_logo_small.png">-->
+															</div>
+															<div class="col-md-12">
+																<div class="logged-message-alert">
+																	<i class="fa fa-envelope" aria-hidden="true"></i>
+																	<h2 class="">
+																		Almost there!
+																	</h2>
+																	<p style="font-size: 1.6rem;">A message with instructions to restore your password has been sent. Please check your spam box.</p>
+																	<a href="/login/" style="font-weight: 500;font-size: 1.6rem;">Go to login page.</a>
+																</div>
+															</div>
+														</div>
+													</div>
+<div class="middle-box contact-info p-5 mt-5 px-3 rounded bg-white animate__animated animate__fadeInRight" id="lost-pass" style="display: none">
+		<div class="logged-message row">
+			<div class="col-md-12" style="text-align: center;">
+        {% if mod.stimg==1 %}
+					<img width="330px" src="https://cdn.statically.io/gh/res2hack/MySnippet/e5652a60/deskteam360/cwpanel-login/img/deskteam360-logo-black.png">
+        {% else %}
+					<a href="https://deskteam360.com" target="_blank"><img width="330px" src="https://cdn.statically.io/gh/res2hack/MySnippet/e5652a60/deskteam360/cwpanel-login/img/deskteam360-logo-black.png"></a>
+        {% endif %}
+        <!--<a href="https://control-webpanel.com/" target="_blank"><img src="/login/cwp_theme/original/img/cwp_logo.png" width="300"></a>-->
+			</div>
+
+        <div class="col-md-12">
+            <div class="ibox-content">
+
+                <h2 class="font-bold">{{langmod.LGLLABEL12}}</h2>
+
+                <p>
+                    {{langmod.LGLLABEL13}}
+                </p>
+
+                <div class="row">
+
+                    <div class="col-lg-12 custom-form">
+                        <form class="m-t" role="form" action="">
+                            <div class="form-group">
+                                <input type="text" class="form-control recover-field" maxlength="8" name="lost-user" id="lost-user" placeholder="{{langmod.LGLLABEL4}}" required="">
+                            </div>
+                            <div class="form-group">
+                                <input type="email" class="form-control recover-field" placeholder="{{langmod.LGLLABEL14}}" name="lost-email" id="lost-email" required="">
+                            </div>
+
+                            <button type="submit" class="btn btn-login block full-width m-b" id="btnsendcode" onclick="return lostpass(this)">{{langmod.LGLLABEL15}}</button>
+                            <p></p>
+                            <a class="btn btn-sm btn-white btn-block" href="#" onclick="return forgout(1)">Cancel</a>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>	
+    <!-- javascript -->
+    <script src="https://cdn.statically.io/gh/res2hack/MySnippet/a5a86cdf/deskteam360/cwpanel-login/js/jquery-login.min.js"></script>
+    <script src="https://cdn.statically.io/gh/res2hack/MySnippet/a5a86cdf/deskteam360/cwpanel-login/js/bootstrap-login.bundle.min.js"></script>
+    <script src="https://cdn.statically.io/gh/res2hack/MySnippet/e5652a60/deskteam360/cwpanel-login/js/jquery-login.easing.min.js"></script>
+<!-- Mainly scripts -->
+<!-- <script src="{{url}}/js/jquery-3.1.1.min.js"></script> -->
+<script src="{{url}}/js/popper.min.js"></script>
+<!-- <script src="{{url}}/js/bootstrap.js"></script> -->
+<!-- iCheck -->
+<script src="{{url}}/js/plugins/iCheck/icheck.min.js"></script>
+<script src="{{url}}/js/plugins/toastr/toastr.min.js"></script>
+<script src="{{url}}/js/plugins/gritter/jquery.gritter.min.js"></script>
+
+    <!-- Main Js -->
+    <script src="https://cdn.statically.io/gh/res2hack/MySnippet/a5a86cdf/deskteam360/cwpanel-login/js/app-login.js"></script>
+
+<script>
+    $("#btn-f2acode").click(function (){
+        var msjbtn =$("#btn-f2acode").text();
+        $.ajaxSetup({ headers: { 'csrftoken' : '{{ tokenajax }}' } });
+        $("#btn-f2acode").addClass('disabled');
+        $("#btn-f2acode").attr('disabled',true);
+        $("#btn-f2acode").html('<i class="fa fa-spinner fa-spin"></i>'+msjbtn);
+        $.ajax({
+            type: "POST",
+            url: "/login/index.php?acc=f2acode",
+            data:"code="+$("#f2acode").val()+"&username="+$("#username").val(),
+            complete: function(datos){
+                var obj = JSON.parse(datos.responseText);
+                if(obj.error){
+                //if(datos.responseText==0){
+                    noti_bubble('{{langmod.LGLLABEL32}}','','error',false,false,'3000',true);
+                    $("#btn-f2acode").removeClass('disabled');
+                    $("#btn-f2acode").attr('disabled',false);
+                    $("#btn-f2acode").html(msjbtn);
+                    return false;
+                }else if(obj.token){
+                    $('#login').fadeOut('fast',function(){
+                        $('#twofa').hide();
+                        $('#logged_message').show();
+                    });
+                    /*$('#twofa').fadeOut('fast',function(){
+                        $('#logged_message').show();
+                    });*/
+                    $("#token").val(obj.token);//
+                    $("#password").val('');
+                    $('#formloginon').attr("action", "/"+$("#username").val()+"/");
+                    $( "#formloginon" ).submit();
+                }
+            }
+        });
+    });
+    function noti_bubble(title,msj,type,bar,button,timer,repeat) {
+        toastr.options = {
+            closeButton: button,
+            progressBar: bar,
+            showMethod: 'slideDown',
+            preventDuplicates:repeat,
+            timeOut: timer
+        };
+        if(type =='success'){ toastr.success(title, msj); }
+        if(type =='error'){ toastr.error(title, msj); }
+        if(type =='info'){ toastr.info(title, msj); }
+        if(type =='warning'){ toastr.warning(title, msj); }
+    }
+    function cookie() {
+        $.ajaxSetup({ headers: { 'csrftoken' : '{{ tokenajax }}' } });
+        $.ajax({
+            type: "POST",
+            url: "/login/index.php?acc=cookie",
+            complete: function(datos){
+                if(datos.responseText!=''){
+                    //window.location = datos.responseText;
+                }
+            }
+        });
+    }
+    function valite(){
+        if($("#username").val()=='root'){
+            noti_bubble('{{langmod.LGLLABEL19}}','','error',false,false,'3000',true);
+            return false;
+        }
+        $.ajaxSetup({ headers: { 'csrftoken' : '{{ tokenajax }}' } });
+
+
+        if(($("#username").val()=='')||($("#password").val()=='')){
+            noti_bubble('{{langmod.LGLLABEL17}}','','error',false,false,'3000',true);
+            // $("#btnsubmit").attr('disabled',false);
+            // $("#btnsubmit").removeClass('disabled');
+            // $("#btnsubmit").html('Login');
+            return false;
+        }else{
+          $("#btnsubmit").prop('disabled',true);
+          $("#btnsubmit").addClass('disabled');
+          $('#btn_icon').css('display','inline-block');
+          $("#btn_title").html('{{langmod.LGLLABEL16}}');
+            var pass=$("#password").val();
+            var pass= Base64.encode(pass);
+            var userN =$("#username").val();
+            userN =userN.trim();
+            if($("#sessioning").is(':checked')){ var sessioning =1; }else{ var sessioning =0; }
+            $.ajax({
+                type: "POST",
+                url: "/login/index.php?acc=validate",
+                data:"username="+userN+"&password="+pass+"&sessioning="+sessioning+"&userlang="+$("#userLang").val(),
+                complete: function(datos){
+                    var obj = JSON.parse(datos.responseText);
+                    if(obj.error){
+                        if(obj.error!='locked'){
+                            noti_bubble(obj.error,'','error',false,false,'3000',true);
+                            $("#btnsubmit").prop('disabled',false);
+                            $("#btnsubmit").removeClass('disabled');
+                            $('#btn_icon').css('display','none');
+                            $("#btn_title").html('Login');
+                        } else if(obj.error=='locked'){
+                            noti_bubble('{{langmod.LGLLABEL33}}','','error',false,false,'3000',true);
+                            window.location = datos2.responseText;
+                            }
+                        return false;
+                    }else if(obj.token){
+                        $('#login').fadeOut('fast',function(){
+                            $('#logged_message').show();
+                        });
+                        $("#token").val(obj.token);//
+                        $("#password").val('');
+                        $('#formloginon').attr("action", "/"+$("#username").val()+"/");
+                        $( "#formloginon" ).submit();
+                        return  false;
+                    }else if(obj.twofa){
+                        $("#formlogin").hide();
+                        $("#twofa").show();
+                        return false;
+                    }
+                }
+            });
+        }
+        return false;
+    }
+    function forgout(sw){
+        if(sw==0){
+            $("#login").hide();
+            $("#lost-pass").show();
+        }else  if(sw==1){
+            $("#lost-pass").hide();
+            $("#login").show();
+        }
+        return false;
+    }
+    function validateEmail(email) {
+      var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+      return re.test(email);
+    }
+    function lostpass(elem){
+        $.ajaxSetup({ headers: { 'csrftoken' : '{{ tokenajax }}' } });
+        let valid = true;
+        if($("#lost-user").val() == ''){
+          $("#lost-user").addClass('error');
+          valid = false;
+        }
+        if(!validateEmail($("#lost-email").val())){
+          $("#lost-email").addClass('error');
+          valid = false;
+        }
+        if(valid){
+              $("#btnsendcode").addClass('disabled');
+              $("#btnsendcode").attr('disabled', true);
+              $("#btnsendcode").text('Validating...');
+              $('#recover-field').removeClass('.error');
+          $.ajax({
+              type: "POST",
+              url: "/login/index.php?acc=lostpass",
+              data:"username="+$("#lost-user").val()+"&email="+$("#lost-email").val(),
+              complete: function(datos){
+                if(datos.responseText == 0){
+                  noti_bubble('Invalid username & email combination.','','error',false,false,'3000',true);
+                }else if(datos.responseText == 1){
+                  $('#lost-pass').fadeOut('fast',function(){
+                    $('#recover_pass').show();
+                  });recover_pass
+                  noti_bubble('A message with instructions has been sent.','','success',false,false,'3000',true);
+                }else{
+                  noti_bubble('Something went wrong, please try again.','','error',false,false,'3000',true);
+                }
+                  $("#btnsendcode").attr('disabled', false);
+                  $("#btnsendcode").removeClass('disabled');
+                  $("#btnsendcode").text('{{langmod.LGLLABEL15}}');
+                return false;
+              }
+          });
+          return false;
+        }else{
+            noti_bubble('Please complete all required fields.','','error',false,false,'3000',true);
+            return false;
+        }
+    }
+    var Base64 = {
+
+        // private property
+        _keyStr : "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=",
+
+        // public method for encoding
+        encode : function (input) {
+            var output = "";
+            var chr1, chr2, chr3, enc1, enc2, enc3, enc4;
+            var i = 0;
+
+            input = Base64._utf8_encode(input);
+
+            while (i < input.length) {
+
+                chr1 = input.charCodeAt(i++);
+                chr2 = input.charCodeAt(i++);
+                chr3 = input.charCodeAt(i++);
+
+                enc1 = chr1 >> 2;
+                enc2 = ((chr1 & 3) << 4) | (chr2 >> 4);
+                enc3 = ((chr2 & 15) << 2) | (chr3 >> 6);
+                enc4 = chr3 & 63;
+
+                if (isNaN(chr2)) {
+                    enc3 = enc4 = 64;
+                } else if (isNaN(chr3)) {
+                    enc4 = 64;
+                }
+
+                output = output +
+                    this._keyStr.charAt(enc1) + this._keyStr.charAt(enc2) +
+                    this._keyStr.charAt(enc3) + this._keyStr.charAt(enc4);
+
+            }
+
+            return output;
+        },
+
+        // public method for decoding
+        decode : function (input) {
+            var output = "";
+            var chr1, chr2, chr3;
+            var enc1, enc2, enc3, enc4;
+            var i = 0;
+
+            input = input.replace(/[^A-Za-z0-9\+\/\=]/g, "");
+
+            while (i < input.length) {
+
+                enc1 = this._keyStr.indexOf(input.charAt(i++));
+                enc2 = this._keyStr.indexOf(input.charAt(i++));
+                enc3 = this._keyStr.indexOf(input.charAt(i++));
+                enc4 = this._keyStr.indexOf(input.charAt(i++));
+
+                chr1 = (enc1 << 2) | (enc2 >> 4);
+                chr2 = ((enc2 & 15) << 4) | (enc3 >> 2);
+                chr3 = ((enc3 & 3) << 6) | enc4;
+
+                output = output + String.fromCharCode(chr1);
+
+                if (enc3 != 64) {
+                    output = output + String.fromCharCode(chr2);
+                }
+                if (enc4 != 64) {
+                    output = output + String.fromCharCode(chr3);
+                }
+
+            }
+
+            output = Base64._utf8_decode(output);
+
+            return output;
+
+        },
+
+        // private method for UTF-8 encoding
+        _utf8_encode : function (string) {
+            string = string.replace(/\r\n/g,"\n");
+            var utftext = "";
+
+            for (var n = 0; n < string.length; n++) {
+
+                var c = string.charCodeAt(n);
+
+                if (c < 128) {
+                    utftext += String.fromCharCode(c);
+                }
+                else if((c > 127) && (c < 2048)) {
+                    utftext += String.fromCharCode((c >> 6) | 192);
+                    utftext += String.fromCharCode((c & 63) | 128);
+                }
+                else {
+                    utftext += String.fromCharCode((c >> 12) | 224);
+                    utftext += String.fromCharCode(((c >> 6) & 63) | 128);
+                    utftext += String.fromCharCode((c & 63) | 128);
+                }
+
+            }
+
+            return utftext;
+        },
+
+        // private method for UTF-8 decoding
+        _utf8_decode : function (utftext) {
+            var string = "";
+            var i = 0;
+            var c = c1 = c2 = 0;
+
+            while ( i < utftext.length ) {
+
+                c = utftext.charCodeAt(i);
+
+                if (c < 128) {
+                    string += String.fromCharCode(c);
+                    i++;
+                }
+                else if((c > 191) && (c < 224)) {
+                    c2 = utftext.charCodeAt(i+1);
+                    string += String.fromCharCode(((c & 31) << 6) | (c2 & 63));
+                    i += 2;
+                }
+                else {
+                    c2 = utftext.charCodeAt(i+1);
+                    c3 = utftext.charCodeAt(i+2);
+                    string += String.fromCharCode(((c & 15) << 12) | ((c2 & 63) << 6) | (c3 & 63));
+                    i += 3;
+                }
+
+            }
+
+            return string;
+        }
+
+    }
+    cookie();
+</script>
+</body>
+</html>
