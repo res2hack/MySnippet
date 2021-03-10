@@ -3,11 +3,11 @@
 *** (C) ZACH COLE 2016
 **/
 
-@import url(https://fonts.googleapis.com/css?family=Lato:400,300,300italic,400italic,700,700italic);
+/*@import url(https://fonts.googleapis.com/css?family=Lato:400,300,300italic,400italic,700,700italic);*/
 
 /* UNIVERSAL */
 
-html,
+/*html,
 body {
   height: 100%;
   width: 100%;
@@ -17,17 +17,17 @@ body {
   top: 0;
   font-size: 100%;
 }
-
+*/
 /* ROOT FONT STYLES */
 
-* {
+/** {
   font-family: 'Lato', Helvetica, sans-serif;
   color: #333447;
   line-height: 1.5;
-}
+}*/
 
 /* TYPOGRAPHY */
-
+/*
 h1 {
   font-size: 2.5rem;
 }
@@ -71,7 +71,7 @@ p {
 }
 
 /* POSITIONING */
-
+*/
 .left {
   text-align: left;
 }
